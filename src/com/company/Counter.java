@@ -8,7 +8,7 @@ import static java.lang.Thread.sleep;
 
 public class Counter{
     private int c = 0;
-    private final ReentrantLock lock = new ReentrantLock();
+    final ReentrantLock lock = new ReentrantLock();
 
     public void increment() throws InterruptedException {
         try {
@@ -16,7 +16,7 @@ public class Counter{
             if (isLocked) {
                 try {
                     int a;
-                    sleep(2000);
+                    sleep(950);
                     a = c;
                     a++;
                     c = a;
